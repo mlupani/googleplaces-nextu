@@ -30,7 +30,6 @@ const FBLogin = props => {
     })
 
     const iniciarFB = () =>{
-
             window.fbAsyncInit = function() {
                 window.FB.init({
                     appId      : '530195005001205',
