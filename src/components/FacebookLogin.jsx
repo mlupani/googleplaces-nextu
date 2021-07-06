@@ -33,7 +33,7 @@ const FBLogin = props => {
 
             window.fbAsyncInit = function() {
                 window.FB.init({
-                    appId      : '881524756026260',
+                    appId      : '530195005001205',
                     cookie     : true,
                     xfbml      : true,
                     status     : true,
@@ -48,11 +48,10 @@ const FBLogin = props => {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=881524756026260';
+            js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=530195005001205';
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
        //document.addEventListener('FBListo', fbLoginStatus);
-       
 
     }
 
