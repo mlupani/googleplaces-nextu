@@ -14,7 +14,7 @@ export const insertLog = async (mail, tipo_busqueda, whereLoging, name) => {
             body: JSON.stringify(log),
             mode: 'no-cors'
         });
-        const data = await res.json()
+        await res.json()
         //alert(data);
 
     } catch (error) {

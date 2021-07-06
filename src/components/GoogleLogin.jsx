@@ -16,15 +16,16 @@ const GoogleLogin = props => {
                     const clientParam = {client_id:'699321370411-85bme9k73baj09nlt7jqqubvlbj7r9d5.apps.googleusercontent.com'}
                     gapi.auth2.init(clientParam)
                     const auth = await gapi.auth2.getAuthInstance();
-                    const success = await auth.currentUser.get()
+                    const profile = await auth.currentUser.get().getBasicProfile();
                     props.setLoading(false)
-                    if(success.Rs && !props.logged){
+                    if(profile && !props.logged){
                         const usuario = []
-                        usuario['IDLog'] = success.Rs.RR
-                        usuario['nombre'] = success.Rs.Te
-                        usuario['mail'] = success.Rs.At
-                        usuario['accessToken'] = success.tc.access_token
-                        usuario['imagen'] = success.Rs.WI
+                        usuario['IDLog'] = profile.getId()
+                        usuario['nombre'] = profile.getName()
+                        usuario['mail'] = profile.getEmail()
+                        //usuario['accessToken'] = profile.tc.access_token
+                        usuario['imagen'] = profile.getImageUrl()
+                        console.log(usuario);
                         props.setUser(usuario);
                         props.loginStatus(true);
                         props.loginWhere("google", true);
@@ -68,10 +69,13 @@ const GoogleLogin = props => {
         auth.signIn()
             .then(
             (success) => {
-                user['IDLog'] = success.Rs.RR
-                user['nombre'] = success.Rs.Te
-                user['mail'] = success.Rs.At
-                user['accessToken'] = success.tc.access_token
+                let profile = success.getBasicProfile();
+                let authResponse = success.getAuthResponse()
+
+                user['IDLog'] = profile.getId()
+                user['nombre'] = profile.getName()
+                user['mail'] = profile.getEmail()
+                user['accessToken'] = authResponse.id_token
                 props.setUser(user);
                 props.loginStatus(true);
                 props.loginWhere("google", true);

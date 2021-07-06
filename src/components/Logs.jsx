@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import useFetch from '../hooks/useFetch'
 
 const Logs = ({logInsert}) => {
@@ -7,6 +7,8 @@ const Logs = ({logInsert}) => {
 
     if(isLoading)
         return (<div className="spinner-border text-danger" style={{textAlign:"center", marginLeft:"350px"}} role="status"><span className="sr-only"></span></div>);
+
+    console.log(error);
 
     if(!data.length)
         return (<p>No hay elementos</p>)

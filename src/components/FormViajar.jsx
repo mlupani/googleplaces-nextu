@@ -1,5 +1,4 @@
 import React, {Fragment, useState, useEffect} from 'react';
-import useFetch from '../hooks/useFetch'
 
 const FormViajar = ({busqueda, showMap, name, googleState}) => {
 

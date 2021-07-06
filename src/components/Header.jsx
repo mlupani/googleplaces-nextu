@@ -58,7 +58,7 @@ const Header = props => {
                             </Modal>
                         </div>)
 
-        },[props.FBLogon, props.Logged, props.GoogleLogon, props.LoginStatus, props.loginWhere, props.nombreUser, props.InvitedLogon, props.modal, props.setModal,props])
+        },[props.FBLogon, props.Logged, props.GoogleLogon, props.LoginStatus, props.loginWhere, props.nombreUser, props.InvitedLogon, props.modal, props.setModal,props, logs])
 
         
 
